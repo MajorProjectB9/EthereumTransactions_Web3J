@@ -39,7 +39,7 @@ public class App
 
         System.out.println("\nTransactions");
         Subscription subscription = (Subscription) client.replayPastTransactionsFlowable(DefaultBlockParameterName.EARLIEST, DefaultBlockParameterName.LATEST).subscribe(tx -> {
-            System.out.println("Block Hash: " + tx.getBlockHash() + "\nTransaction Hash: " + tx.getHash() + "\nValue: " + tx.getValue() + "\n\n");
+            System.out.println("Block Hash: " + tx.getBlockHash() + "\nTransaction Hash: " + tx.getHash() + "\nValue: " + tx.getValue() + "\nFrom Address: " + tx.getFrom() + "\nTo Contract Address: " + tx.getTo() + "\n\n");
         });
 
         System.exit(0);
